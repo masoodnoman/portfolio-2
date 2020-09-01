@@ -58,10 +58,6 @@ h2, h3 {
     float: left;
 }
 
-.navigation-list-right {
-    float: right;
-}
-
 .navigation-menu-section li a {
     display: block;
     color: white;
@@ -70,8 +66,20 @@ h2, h3 {
     text-decoration: none;
 }
 
+.navigation-list-right {
+    float: right;
+}
+
 .navigation-list-right li a:hover {
     background-color: #333;
+}
+
+.navigation-menu-section .icon {
+    display: none;
+}
+
+.topnav {
+    display: none;
 }
 
 /* ------------------------------------------------------------------------ */
@@ -79,12 +87,10 @@ h2, h3 {
 /* Introduction Section */
 .introduction-section {
     background-color: var(--mainColor);
-    margin-top: 40px;
-    padding: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-        "image-section about-me";
+        "image-section about-me-section-container";
 }
 
 .introduction-section i {
@@ -95,17 +101,22 @@ h2, h3 {
     color: #111;
 }
 
+.about-me-section-container {
+    padding-top: 50px;
+}
+
 /* Image Section/Profile Picture */
 .image-section {
-    padding-top: 10px;
+    padding-top: 80px;
     text-align: center;
 }
 
 .image-section .profile-picture {
     display: block;
+    border-radius: 50%;
     margin: 0 auto;
-    height: 500px;
-    width: 500px;
+    height: 300px;
+    width: 300px;
     object-fit: cover;
 }
 
@@ -160,6 +171,7 @@ h2, h3 {
 .projects-section-container {
     background-color: var(--mainColor);
     padding-bottom: 20px;
+    padding-top: 20px;
 }
 
 .projects-section-container h1 {
@@ -170,15 +182,15 @@ h2, h3 {
     background-color: var(--mainColor);
     color: white;
     text-decoration: none;
-    border: none;
     text-align: center;
-    padding: 10px;
-    width: 20%;
+    border: none;
+    padding: 5px;
 }
 
 .projects-section {
     text-align: center;
     width: 50%;
+    height: auto;
     display: grid;
     margin: 0 auto;
     gap: 20px;
@@ -214,8 +226,6 @@ h2, h3 {
     background-color: var(--secondaryColor);
 }
 
-
-
 /* ------------------------------------------------------------------------ */
 
 /* Contact Me Section */
@@ -229,7 +239,6 @@ h2, h3 {
     max-width: 600px;
     margin: 0 auto;
     padding: 15px;
-    border-radius: 5px;
     background-color: #111;
     margin-bottom: 50px;
     line-height: 2.7em;
@@ -239,7 +248,6 @@ h2, h3 {
     width: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
-    border-radius: 5px;
     font-size: 14px;
 }
 
@@ -250,12 +258,112 @@ textarea {
 /* ------------------------------------------------------------------------ */
 
 /* Media Queries */
-@media screen and (max-width: 1200px) {
-    .container{
+
+@media screen and (max-width: 1000px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "topnav"
+            "introduction-section"
+            "skills-section"
+            "projects-section"
+            "contact-me-section";
+    }
+
+    .navigation-menu-section {
+        display: none;
+    }
+
+    .topnav {
+        overflow: hidden;
+        background-color: #111;
+        position: fixed;
         width: 100%;
+        display: block;
+    }
+
+    .topnav a {
+        color: white;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        display: block;
+    }
+
+    .topnav a.icon {
+        background: #111;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .topnav a:hover {
+        background-color: #333;
+        color: white;
+    }
+
+    .introduction-section {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "image-section"
+            "about-me-section";
+    }
+
+    .about-me-section-container h1 {
+        text-align: center;
+    }
+
+    .projects-section {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "covid-19-tracker"
+        "currency-converter"
+        "to-do-list";
+    }
+
+    .about-me-section {
+        padding: 20px;
     }
 }
 
-@media screen and (max-width: 800px) {
-    
+@media screen and (max-width: 850px) {
+    .interests-education-section {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "interests-section"
+            "education-section";
+    }
+
+    .skills-section {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "cloud-engineering"
+        "information-security"
+        "web-development"
+        "programming-languages"
+        "database-languages";
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .contact-form {
+        max-width: 500px;
+    } 
+}
+
+@media screen and (max-width: 600px) {
+    .contact-form {
+        max-width: 480px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .contact-form {
+        max-width: 380px;
+    }
 }
