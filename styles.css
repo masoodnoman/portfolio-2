@@ -1,0 +1,261 @@
+:root {
+    --mainColor: #3F0000;
+    --secondaryColor: #530202;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: white;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+body i {
+    font-size: 30px;
+    color: white;
+}
+
+h1 {
+    font-size: 50x;
+}
+
+h2, h3 {
+    font-size: 30px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "navigation-menu-section"
+        "introduction-section"
+        "skills-section"
+        "projects-section"
+        "contact-me-section";
+}
+
+/* ------------------------------------------------------------------------ */
+
+/* Navigation Menu Section */
+.navigation-menu-section {
+    position: fixed;
+    width: 100%;
+}
+
+.navigation-menu-section ul{
+    background-color: #111;
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation-menu-section li {
+    float: left;
+}
+
+.navigation-list-right {
+    float: right;
+}
+
+.navigation-menu-section li a {
+    display: block;
+    color: white;
+    padding: 14px 16px;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.navigation-list-right li a:hover {
+    background-color: #333;
+}
+
+/* ------------------------------------------------------------------------ */
+
+/* Introduction Section */
+.introduction-section {
+    background-color: var(--mainColor);
+    margin-top: 40px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "image-section about-me";
+}
+
+.introduction-section i {
+    padding: 10px;
+}
+
+.introduction-section .image-section i:hover{
+    color: #111;
+}
+
+/* Image Section/Profile Picture */
+.image-section {
+    padding-top: 10px;
+    text-align: center;
+}
+
+.image-section .profile-picture {
+    display: block;
+    margin: 0 auto;
+    height: 500px;
+    width: 500px;
+    object-fit: cover;
+}
+
+.interests-education-section {
+    display: flex;
+    padding: 10px;
+}
+
+/* ------------------------------------------------------------------------ */
+
+/* Skills Section */
+.skills-section-container {
+    background-color: var(--secondaryColor);
+    text-align: center;
+}
+
+.skills-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+        "cloud-engineering information-security web-development"
+        "programming-languages database-languages";
+    gap: 30px;  
+}
+
+.skills-section i {
+    font-size: 80px;
+}
+
+/* ------------------------------------------------------------------------ */
+
+/* Experience Section */
+.experience-section-container {
+    text-align: center;
+    background-color: var(--mainColor);
+    padding-top: 30px;
+}
+
+.experience-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "aws-job"
+        "vector-security-networks-job"
+        "sunrise-senior-living-job"
+        "mens-wearhouse-job";
+}
+
+/* ------------------------------------------------------------------------ */
+
+/*Projects Section */
+.projects-section-container {
+    background-color: var(--mainColor);
+    padding-bottom: 20px;
+}
+
+.projects-section-container h1 {
+    text-align: center;
+}
+
+.projects-section-container a {
+    background-color: var(--mainColor);
+    color: white;
+    text-decoration: none;
+    border: none;
+    text-align: center;
+    padding: 10px;
+    width: 20%;
+}
+
+.projects-section {
+    text-align: center;
+    width: 50%;
+    display: grid;
+    margin: 0 auto;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+        "covid-19-tracker currency-converter to-do-list";
+}
+
+.projects-section img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+    background-color: #111;
+}
+
+.card-container {
+    padding-bottom: 20px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card a:hover {
+    background-color: var(--secondaryColor);
+}
+
+
+
+/* ------------------------------------------------------------------------ */
+
+/* Contact Me Section */
+
+.contact-me-section-container {
+    background-color: var(--secondaryColor);
+}
+
+.contact-form {
+    display: block;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #111;
+    margin-bottom: 50px;
+    line-height: 2.7em;
+}
+
+.input-field {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+textarea {
+    resize: none;
+}
+
+/* ------------------------------------------------------------------------ */
+
+/* Media Queries */
+@media screen and (max-width: 1200px) {
+    .container{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    
+}
